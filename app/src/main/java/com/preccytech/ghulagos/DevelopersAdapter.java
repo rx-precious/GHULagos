@@ -44,7 +44,7 @@ public class DevelopersAdapter extends ArrayAdapter<DevelopersList> {
 
 
         //Get the object located at this position in the list
-        final DevelopersList currentDeveloper = getItem(position);
+         DevelopersList currentDeveloper = getItem(position);
         //Find the textview in the items.xml layout with the ID specified
         TextView Username = (TextView) ListItemView.findViewById(R.id.profile_name);
         // Get the miwok translation from the currentWord and set the text to the text View above
@@ -56,11 +56,13 @@ public class DevelopersAdapter extends ArrayAdapter<DevelopersList> {
 
         Picasso.with(context)
                 .load(currentDeveloper.getmPicture())
+                .resize(100,100)
                 .into(image);
 
         list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DevelopersList currentDeveloper = getItem(position);
 
                 Intent openIntent = new Intent(v.getContext(), ProfilePage.class);
                 openIntent.putExtra(NAME, currentDeveloper.getmUsername());

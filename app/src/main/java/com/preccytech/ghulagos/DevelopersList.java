@@ -7,7 +7,7 @@ package com.preccytech.ghulagos;
 public class DevelopersList {
     private String mUsername;
     private String mUrl;
-    private static String mPicture;
+    private String mPicture;
 
     public  DevelopersList(String username, String url, String picture){
         mUsername = username;
